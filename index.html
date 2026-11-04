@@ -4,10 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para mi amor ❤️</title>
+<title>Para mi princesa ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
 
 :root {
   --bg: #170d14;
@@ -28,22 +28,13 @@ body {
   overflow-x: hidden;
 }
 
-.heart {
-  position: fixed;
-  bottom: -30px;
-  color: #e99bb5;
-  opacity: .4;
-  pointer-events: none;
-  animation: float 10s linear infinite;
-  z-index: 0;
-}
-
-@keyframes float {
-  to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
 }
 
 section {
-  padding: 100px 22px;
+  padding: 90px 20px;
   text-align: center;
   position: relative;
 }
@@ -54,24 +45,19 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background:
-    radial-gradient(ellipse at center, #542439 0%, #281522 45%, #170d14 80%);
+  background: radial-gradient(ellipse at center, #542439, #281522 55%, #170d14 85%);
+  padding: 30px;
 }
 
 .eyebrow {
   color: var(--pink);
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   font-size: 11px;
   text-transform: uppercase;
 }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-}
-
 h1 {
-  font-size: clamp(48px, 10vw, 82px);
+  font-size: clamp(45px, 10vw, 82px);
   margin: 25px 0;
   line-height: 1.1;
 }
@@ -81,19 +67,23 @@ h1 em, h2 em { color: var(--pink); }
 .subtitle {
   color: #e6cbd5;
   line-height: 1.9;
-  max-width: 430px;
-  font-size: 16px;
+  max-width: 500px;
+  font-size: 15px;
+}
+
+.section-title {
+  font-size: clamp(34px, 7vw, 52px);
+  margin: 15px 0 20px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 28px;
-  padding: 15px 27px;
+  margin-top: 25px;
+  padding: 14px 27px;
   border-radius: 40px;
   background: var(--pink);
   color: #351b29;
   border: none;
-  text-decoration: none;
   font: 600 14px 'DM Sans', sans-serif;
   cursor: pointer;
   transition: .3s;
@@ -101,31 +91,46 @@ h1 em, h2 em { color: var(--pink); }
 
 .btn:hover { transform: translateY(-4px); }
 
-.section-title {
-  font-size: clamp(34px, 7vw, 52px);
-  margin: 15px 0 20px;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(23,13,20,.94);
+  backdrop-filter: blur(12px);
+  padding: 14px 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-bottom: 1px solid #513044;
 }
+
+nav a {
+  color: #f0c5d3;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+nav a:hover { color: white; }
 
 .card {
   max-width: 650px;
-  margin: 35px auto 0;
-  padding: 35px;
-  border: 1px solid #a75d77;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #75445b;
   border-radius: 20px;
   background: linear-gradient(145deg, #39202e, #21131c);
-  line-height: 2;
+  line-height: 1.9;
   color: #f5dfe7;
   text-align: left;
 }
-
-.card p { margin: 0 0 17px; }
 
 .envelope {
   font-size: 85px;
   margin: 25px 0 5px;
   cursor: pointer;
-  transition: .4s;
   display: inline-block;
+  transition: .4s;
 }
 
 .envelope:hover { transform: scale(1.12) rotate(-5deg); }
@@ -140,59 +145,176 @@ h1 em, h2 em { color: var(--pink); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.timeline {
-  max-width: 550px;
-  margin: 40px auto;
-  text-align: left;
-  border-left: 2px solid #b66b85;
-  padding-left: 25px;
+/* GALERÍA */
+
+.gallery {
+  max-width: 1050px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
 }
 
-.event {
-  margin-bottom: 40px;
-  position: relative;
+.photo {
+  background: #291722;
+  border: 1px solid #694052;
+  border-radius: 17px;
+  padding: 10px;
+  overflow: hidden;
+  transition: .3s;
 }
 
-.event::before {
-  content: '♥';
-  position: absolute;
-  left: -34px;
+.photo:hover { transform: translateY(-5px); }
+
+.photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 11px;
+  display: block;
+}
+
+.photo h3 {
   color: var(--pink);
+  font-size: 21px;
+  margin: 15px 5px 5px;
 }
 
-.event h3 {
-  color: var(--pink);
-  font-size: 23px;
-  margin: 0 0 8px;
+.photo p {
+  color: #d8bdc8;
+  font-size: 13px;
+  margin: 0 5px 10px;
 }
 
-.event p { color: #e6cbd5; line-height: 1.8; }
+/* FAMILIA */
 
-.memory {
-  max-width: 650px;
-  margin: 30px auto;
-  padding: 30px;
+.family {
+  max-width: 800px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.family-card {
+  padding: 15px;
+  background: #291722;
+  border: 1px solid #75445b;
   border-radius: 18px;
+}
+
+.family-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.family-card h3 {
+  color: var(--pink);
+  font-size: 25px;
+  margin: 15px 0 5px;
+}
+
+.family-card p {
+  color: #e6cbd5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* 100 RAZONES */
+
+.reasons-container {
+  max-width: 850px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reason {
   background: #291722;
   border: 1px solid #684054;
+  border-radius: 13px;
+  padding: 15px;
+  color: var(--cream);
+  cursor: pointer;
+  text-align: left;
+  font: 14px 'DM Sans', sans-serif;
+  transition: .25s;
 }
 
-.memory .symbol { font-size: 35px; }
-
-.memory p {
-  color: #e6cbd5;
-  line-height: 1.8;
+.reason:hover {
+  background: #48283a;
+  border-color: var(--pink);
 }
 
-.secret {
-  display: none;
-  margin: 25px auto;
+.reason-number {
   color: var(--pink);
-  font-family: 'Playfair Display', serif;
-  font-size: 25px;
-  max-width: 500px;
-  line-height: 1.6;
-  animation: appear .8s ease;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.reason-text {
+  display: none;
+  color: #f4c9d8;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.reason.open .reason-text { display: block; }
+
+/* VALE PARA RASCAR */
+
+.scratch-area {
+  width: min(420px, 90vw);
+  height: 245px;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f5c3d3, #b96b89);
+  box-shadow: 0 10px 40px #0005;
+  touch-action: none;
+}
+
+.prize {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #491d32;
+  background: linear-gradient(145deg, #f7d5df, #e7a9bf);
+}
+
+.prize .big-heart { font-size: 48px; }
+
+.prize h3 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.prize p {
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.scratch-help {
+  color: #e6cbd5;
+  font-size: 13px;
 }
 
 footer {
@@ -204,17 +326,44 @@ footer {
 
 footer p {
   font-family: 'Playfair Display', serif;
-  font-size: 23px;
+  font-size: 25px;
 }
 
-@media(max-width: 500px) {
-  section { padding: 75px 18px; }
-  .card { padding: 24px; }
+/* CORAZONES */
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #e99bb5;
+  opacity: .4;
+  pointer-events: none;
+  animation: float 10s linear forwards;
+  z-index: 20;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width: 600px) {
+  section { padding: 70px 16px; }
+  .gallery, .family, .reasons-container {
+    grid-template-columns: 1fr;
+  }
+  .photo img { height: 260px; }
+  .family-card img { height: 260px; }
+  .card { padding: 23px; }
+  nav { gap: 12px; }
 }
 </style>
 </head>
 
 <body>
+
+<!-- PORTADA -->
 
 <div class="hero" id="inicio">
   <span class="eyebrow">Una pequeña sorpresa para ti</span>
@@ -229,142 +378,418 @@ footer p {
   </p>
 </div>
 
+<!-- MENÚ -->
+
+<nav>
+  <a href="#carta">Mi carta</a>
+  <a href="#album">Nuestro álbum</a>
+  <a href="#familia">Nuestra familia</a>
+  <a href="#razones">100 razones</a>
+  <a href="#vale">Un regalo</a>
+</nav>
+
+<!-- CARTA -->
+
 <section id="carta">
   <span class="eyebrow">Con cariño, para ti</span>
   <h2 class="section-title">Una carta para <em>mi amor</em></h2>
   <p class="subtitle">Hay algo que quiero que leas...</p>
 
   <div class="envelope" onclick="openLetter()">💌</div>
-  <p style="color:#dcaabd;font-size:13px">Pulsa el sobre para abrir tu carta</p>
+  <p style="color:#dcaabd;font-size:13px">
+    Pulsa el sobre para abrir tu carta
+  </p>
 
   <div class="card" id="letter">
     <p>Mi niña bonita:</p>
+
     <p>
       A veces me pongo a pensar en lo bonito que es tenerte
       en mi vida. Nos conocemos desde siempre, pero ahora
       tengo la suerte de poder llamarte mi amor.
     </p>
+
     <p>
       Desde aquel 5 de marzo de 2026, nuestra historia tiene
       un significado todavía más especial para mí.
     </p>
+
     <p>
       Quiero que sepas que eres una persona muy importante
       para mí. Me encanta poder compartir contigo esta
       etapa de nuestras vidas y seguir creando recuerdos juntos.
     </p>
+
     <p>
       No necesito que todos los días sean perfectos.
       Solamente quiero que sigamos construyendo algo bonito,
       cuidándonos y eligiéndonos.
     </p>
+
     <p>
       Gracias por ser tú, mi princesa.
       Te quiero muchísimo. ❤️
     </p>
+
     <p style="text-align:right;color:#efb6c9">
       Con todo mi amor, para ti. ♡
     </p>
   </div>
 </section>
 
-<section id="historia" style="background:#21131c">
-  <span class="eyebrow">Nuestro pequeño universo</span>
-  <h2 class="section-title">Nuestra <em>historia</em></h2>
+<!-- ÁLBUM -->
+
+<section id="album" style="background:#21131c">
+  <span class="eyebrow">Nuestros recuerdos</span>
+  <h2 class="section-title">Nuestro <em>pequeño álbum</em></h2>
   <p class="subtitle">
-    Algunas cosas que hacen especial nuestra historia.
+    Cada fotografía guarda un pedacito de nuestra historia.
+    Y todavía nos quedan muchísimos recuerdos por crear.
   </p>
 
-  <div class="timeline">
-    <div class="event">
-      <h3>Desde siempre</h3>
-      <p>
-        Nos conocemos desde que nacimos.
-        Quién iba a imaginar todo lo que la vida
-        todavía tenía preparado para nosotros.
-      </p>
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="fotos/fotos/1000005166.jpg"
+           alt="Nosotros en la playa">
+      <h3>Un día en la playa 🌊</h3>
+      <p>Uno de nuestros recuerdos juntos.</p>
     </div>
 
-    <div class="event">
-      <h3>5 de marzo de 2026</h3>
-      <p>
-        El comienzo de nuestra relación.
-        Una fecha que siempre tendrá un lugar
-        especial en mi corazón.
-      </p>
+    <div class="photo">
+      <img src="fotos/fotos/1000012876.jpg"
+           alt="Rachelly">
+      <h3>Mi niña bonita 🌷</h3>
+      <p>Una de mis caritas favoritas.</p>
     </div>
 
-    <div class="event">
-      <h3>Lo que viene...</h3>
-      <p>
-        Todavía nos quedan muchísimas cosas
-        por vivir, lugares por conocer y recuerdos
-        por crear, mi vida.
-      </p>
+    <div class="photo">
+      <img src="fotos/fotos/1000036019.jpg"
+           alt="Nosotros juntando nuestras frentes">
+      <h3>Frente con frente ❤️</h3>
+      <p>De esos momentos que quiero guardar siempre.</p>
     </div>
+
+    <div class="photo">
+      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.27%20AM.jpeg"
+           alt="Nosotros de pequeños">
+      <h3>Desde pequeñitos 🥹</h3>
+      <p>Quién nos iba a decir todo lo que vendría después.</p>
+    </div>
+
   </div>
 </section>
 
-<section id="detalles">
-  <span class="eyebrow">Pequeños detalles</span>
-  <h2 class="section-title">Para mi <em>nena</em></h2>
+<!-- FAMILIA -->
 
-  <div class="memory">
-    <div class="symbol">🌷</div>
-    <h3>Una cosa que quiero que recuerdes</h3>
-    <p>
-      Nunca olvides lo especial que eres para mí.
-      No tienes que hacer nada extraordinario
-      para merecer todo el cariño que te tengo.
-    </p>
+<section id="familia">
+  <span class="eyebrow">Nuestros pequeños compañeros</span>
+  <h2 class="section-title">Nuestra <em>pequeña familia</em></h2>
+
+  <p class="subtitle">
+    Porque nuestra historia también tiene dos protagonistas
+    muy especiales. ❤️
+  </p>
+
+  <div class="family">
+
+    <div class="family-card">
+      <img src="fotos/fotos/1000000381.jpg"
+           alt="Nina con Rachelly">
+      <h3>Nina 🧸</h3>
+      <p>
+        La pequeña Nina, que llegó a nuestras vidas
+        gracias a mi amor.
+      </p>
+    </div>
+
+    <div class="family-card">
+      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.26%20AM.jpeg"
+           alt="Kevin con Link">
+      <h3>Link 🧸</h3>
+      <p>
+        Mi compañero Link, el regalito que llegó
+        a mí de parte de mi princesa.
+      </p>
+    </div>
+
   </div>
 
-  <div class="memory">
-    <div class="symbol">💗</div>
-    <h3>Un deseo</h3>
+  <div class="card" style="text-align:center">
+    <h3 style="color:#f1b8c9;font-size:27px">
+      Los cuatro ❤️
+    </h3>
     <p>
-      Ojalá podamos mirar atrás dentro de muchos años
-      y recordar con una sonrisa todo lo que vivimos juntos.
+      Tú, yo, Link y Nina. Nuestra pequeña familia,
+      con sus propias historias y muchísimos momentos
+      por compartir.
     </p>
   </div>
 </section>
 
-<section style="background:linear-gradient(180deg,#281522,#170d14)">
-  <span class="eyebrow">Una última cosita...</span>
-  <h2 class="section-title">Tengo algo <em>que decirte</em></h2>
+<!-- 100 RAZONES -->
+
+<section id="razones" style="background:#21131c">
+  <span class="eyebrow">Una lista que nunca terminaría</span>
+  <h2 class="section-title">100 razones por las que <em>te amo</em></h2>
+
   <p class="subtitle">
-    Hay un mensaje que he guardado especialmente para ti.
+    Podría escribir muchísimas más, pero aquí tienes
+    100 pequeñas razones. Pulsa cada una para descubrirla.
   </p>
 
-  <button class="btn" onclick="showSecret()">
-    Descubrir sorpresa ❤️
+  <div class="reasons-container" id="reasonsContainer"></div>
+</section>
+
+<!-- VALE -->
+
+<section id="vale">
+  <span class="eyebrow">Un regalito especial</span>
+  <h2 class="section-title">Tengo algo para <em>mi princesa</em></h2>
+
+  <p class="subtitle">
+    Hay una pequeña sorpresa escondida aquí.
+    Tendrás que rascar para descubrirla...
+  </p>
+
+  <div class="scratch-area" id="scratchArea">
+    <div class="prize">
+      <div class="big-heart">❤️</div>
+      <h3>Vale por un abrazo infinito</h3>
+      <p>
+        Canjeable en cualquier momento.
+        Sin fecha de caducidad.
+        Y con todo mi cariño.
+      </p>
+    </div>
+    <canvas id="scratchCanvas"></canvas>
+  </div>
+
+  <p class="scratch-help">
+    ☝️ Rasca con el dedo o con el ratón para descubrir tu regalo.
+  </p>
+
+  <button class="btn" onclick="revealPrize()">
+    Descubrir mi regalo ❤️
   </button>
-
-  <div class="secret" id="secret">
-    Si tuviera que volver a elegir,
-    volvería a elegirte a ti, mi amor.
-    <br><br>
-    Te quiero, mi princesa. ❤️
-  </div>
 </section>
+
+<!-- FINAL -->
 
 <footer>
   <p>Para ti, mi vida. ♡</p>
   <span>Con amor, hoy y siempre.</span>
+  <p style="font-size:12px;margin-top:30px">
+    5 de marzo de 2026 ❤️
+  </p>
 </footer>
 
 <script>
+
+// ABRIR CARTA
+
 function openLetter() {
   const letter = document.getElementById('letter');
   letter.style.display = 'block';
   letter.scrollIntoView({behavior:'smooth', block:'center'});
 }
 
-function showSecret() {
-  const secret = document.getElementById('secret');
-  secret.style.display = 'block';
-  secret.scrollIntoView({behavior:'smooth', block:'center'});
+// 100 RAZONES
+
+const reasons = [
+"Porque eres tú.",
+"Por tu sonrisa.",
+"Por tu forma de mirarme.",
+"Porque haces especiales los días normales.",
+"Por tu manera de ser.",
+"Porque me encanta hablar contigo.",
+"Por cada momento que compartimos.",
+"Porque puedo ser yo mismo contigo.",
+"Por tu forma de reír.",
+"Porque eres mi persona favorita.",
+"Por cómo consigues alegrarme el día.",
+"Por tu cariño.",
+"Por tus ocurrencias.",
+"Por tu forma de expresarte.",
+"Porque me encanta escucharte.",
+"Por cada conversación contigo.",
+"Porque me haces sentir afortunado.",
+"Por tu ternura.",
+"Por tu personalidad.",
+"Por los recuerdos que tenemos.",
+"Porque nuestra historia es única.",
+"Por conocerte desde pequeños.",
+"Por todo lo que hemos vivido.",
+"Por lo que todavía nos queda por vivir.",
+"Porque me encanta pasar tiempo contigo.",
+"Por tu forma de demostrar cariño.",
+"Por tus pequeños detalles.",
+"Porque me haces sonreír sin darte cuenta.",
+"Por cómo eres cuando estás feliz.",
+"Porque siempre quiero saber de ti.",
+"Por tu mirada.",
+"Por tu dulzura.",
+"Por tus abrazos.",
+"Por lo bonito que es estar contigo.",
+"Porque haces que te extrañe cuando no estás.",
+"Por tu forma de quererme.",
+"Porque me gusta cuidarte.",
+"Por cada risa que compartimos.",
+"Por las pequeñas tonterías que hacemos.",
+"Por nuestras bromas.",
+"Porque eres alguien irrepetible.",
+"Por la confianza que compartimos.",
+"Porque me encanta aprender cosas de ti.",
+"Por tu manera de pensar.",
+"Por tus sueños.",
+"Porque quiero verte cumplir tus metas.",
+"Por lo especial que eres.",
+"Porque me inspiras a mejorar.",
+"Por los momentos tranquilos contigo.",
+"Por los días llenos de risas.",
+"Porque me gusta imaginar nuestro futuro.",
+"Por la historia que estamos construyendo.",
+"Por cada recuerdo que guardo de ti.",
+"Porque hasta lo sencillo se vuelve bonito contigo.",
+"Por tu compañía.",
+"Por tu paciencia.",
+"Por tu forma de hablar.",
+"Porque me encanta cuando estás emocionada.",
+"Por las veces que me haces reír.",
+"Por lo mucho que significas para mí.",
+"Porque eres mi niña bonita.",
+"Por tu corazón.",
+"Por cómo haces que te quiera cada día más.",
+"Porque me encanta verte feliz.",
+"Por nuestras aventuras.",
+"Por las cosas que solo nosotros entendemos.",
+"Por cada momento inesperado.",
+"Porque contigo puedo compartir mis ideas.",
+"Por lo bonito de nuestra conexión.",
+"Por tu manera de sorprenderme.",
+"Porque me gusta hacerte sonreír.",
+"Por cada día que compartimos.",
+"Por la suerte de haberte encontrado.",
+"Porque quiero seguir conociéndote.",
+"Por todo lo que eres.",
+"Por cómo eres incluso en los días difíciles.",
+"Porque no necesito grandes planes para disfrutar contigo.",
+"Por los recuerdos de nuestra infancia.",
+"Por nuestra pequeña familia con Link y Nina.",
+"Porque me encanta nuestra historia.",
+"Por los detalles que te hacen única.",
+"Por cada palabra bonita que me dices.",
+"Porque me haces sentir querido.",
+"Por lo mucho que disfruto tu compañía.",
+"Porque siempre hay algo nuevo que descubrir de ti.",
+"Por tus gestos.",
+"Por tus ocurrencias inesperadas.",
+"Porque me encanta compartir mis días contigo.",
+"Por la ilusión de nuestros planes.",
+"Porque quiero seguir creando recuerdos a tu lado.",
+"Por todo lo que hemos aprendido juntos.",
+"Porque eres una parte muy bonita de mi vida.",
+"Por cada instante que se convierte en recuerdo.",
+"Porque me encanta llamarte mi amor.",
+"Por ser mi princesa.",
+"Porque nuestra historia todavía tiene mucho por contar.",
+"Porque eres tú y eso ya es suficiente.",
+"Y porque, entre tantas personas, mi corazón te elige a ti."
+];
+
+const container = document.getElementById('reasonsContainer');
+
+reasons.forEach((reason, index) => {
+  const card = document.createElement('button');
+  card.className = 'reason';
+  card.innerHTML = `
+    <span class="reason-number">${index + 1}.</span>
+    Una razón para quererte ❤️
+    <div class="reason-text">${reason}</div>
+  `;
+
+  card.addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+
+  container.appendChild(card);
+});
+
+// TARJETA PARA RASCAR
+
+const canvas = document.getElementById('scratchCanvas');
+const ctx = canvas.getContext('2d');
+const scratchArea = document.getElementById('scratchArea');
+
+let scratching = false;
+let revealed = false;
+
+function setupScratch() {
+  const rect = scratchArea.getBoundingClientRect();
+  const ratio = window.devicePixelRatio || 1;
+
+  canvas.width = rect.width * ratio;
+  canvas.height = rect.height * ratio;
+
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+  gradient.addColorStop(0, '#b86a88');
+  gradient.addColorStop(1, '#75334e');
+
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, rect.width, rect.height);
+
+  ctx.fillStyle = '#fff0f5';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.font = '600 24px DM Sans';
+  ctx.fillText('RASCA AQUÍ', rect.width / 2, rect.height / 2 - 10);
+
+  ctx.font = '30px sans-serif';
+  ctx.fillText('✨ ❤️ ✨', rect.width / 2, rect.height / 2 + 35);
+
+  ctx.globalCompositeOperation = 'destination-out';
 }
+
+function scratch(e) {
+  if (!scratching || revealed) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  ctx.beginPath();
+  ctx.arc(x, y, 24, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+canvas.addEventListener('pointerdown', (e) => {
+  if (revealed) return;
+  scratching = true;
+  canvas.setPointerCapture(e.pointerId);
+  scratch(e);
+});
+
+canvas.addEventListener('pointermove', scratch);
+
+canvas.addEventListener('pointerup', () => {
+  scratching = false;
+});
+
+canvas.addEventListener('pointercancel', () => {
+  scratching = false;
+});
+
+function revealPrize() {
+  revealed = true;
+  canvas.style.display = 'none';
+}
+
+setupScratch();
+
+// CORAZONES FLOTANTES
 
 function createHeart() {
   const heart = document.createElement('div');
@@ -373,13 +798,15 @@ function createHeart() {
   heart.style.left = Math.random() * 100 + 'vw';
   heart.style.fontSize = (12 + Math.random() * 20) + 'px';
   heart.style.animationDuration = (7 + Math.random() * 6) + 's';
+
   document.body.appendChild(heart);
+
   setTimeout(() => heart.remove(), 13000);
 }
 
 setInterval(createHeart, 1100);
+
 </script>
 
 </body>
 </html>
-
