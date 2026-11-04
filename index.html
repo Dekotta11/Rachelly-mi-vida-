@@ -1,1 +1,65 @@
-index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Rachelly ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    background: rgba(255,255,255,0.18);
+    padding: 35px;
+    border-radius: 25px;
+    width: 80%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+h1 { font-size: 35px; }
+p { font-size: 19px; line-height: 1.6; }
+button {
+    background: white;
+    color: #ff4f81;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+}
+#mensaje {
+    display: none;
+    margin-top: 25px;
+}
+.heart { font-size: 45px; }
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="heart">❤️</div>
+    <h1>Para Rachelly</h1>
+    <p>Hay personas que llegan a tu vida y la hacen mucho más bonita...</p>
+    <p>Y tú eres una de ellas. ❤️</p>
+    <button onclick="mostrarMensaje()">Pulsa aquí ❤️</button>
+    <div id="mensaje">
+        <h2>Te quiero muchísimo ❤️</h2>
+        <p>Gracias por cada momento, cada sonrisa y por hacerme tan feliz.</p>
+        <p>Esta pequeña sorpresa es solo para ti. 💗</p>
+        <div class="heart">💘</div>
+    </div>
+</div>
+<script>
+function mostrarMensaje() {
+    document.getElementById("mensaje").style.display = "block";
+}
+</script>
+</body>
+</html>
