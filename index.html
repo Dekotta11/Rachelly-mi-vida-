@@ -1,65 +1,385 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Rachelly ❤️</title>
+<title>Para mi amor ❤️</title>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  --bg: #170d14;
+  --pink: #f1b8c9;
+  --cream: #f9e9e9;
+  --wine: #7c344d;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    color: white;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #e99bb5;
+  opacity: .4;
+  pointer-events: none;
+  animation: float 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+}
+
+section {
+  padding: 100px 22px;
+  text-align: center;
+  position: relative;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at center, #542439 0%, #281522 45%, #170d14 80%);
+}
+
+.eyebrow {
+  color: var(--pink);
+  letter-spacing: 5px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(48px, 10vw, 82px);
+  margin: 25px 0;
+  line-height: 1.1;
+}
+
+h1 em, h2 em { color: var(--pink); }
+
+.subtitle {
+  color: #e6cbd5;
+  line-height: 1.9;
+  max-width: 430px;
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 15px 27px;
+  border-radius: 40px;
+  background: var(--pink);
+  color: #351b29;
+  border: none;
+  text-decoration: none;
+  font: 600 14px 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover { transform: translateY(-4px); }
+
+.section-title {
+  font-size: clamp(34px, 7vw, 52px);
+  margin: 15px 0 20px;
+}
+
 .card {
-    background: rgba(255,255,255,0.18);
-    padding: 35px;
-    border-radius: 25px;
-    width: 80%;
-    max-width: 450px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 650px;
+  margin: 35px auto 0;
+  padding: 35px;
+  border: 1px solid #a75d77;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #39202e, #21131c);
+  line-height: 2;
+  color: #f5dfe7;
+  text-align: left;
 }
-h1 { font-size: 35px; }
-p { font-size: 19px; line-height: 1.6; }
-button {
-    background: white;
-    color: #ff4f81;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-size: 17px;
-    cursor: pointer;
+
+.card p { margin: 0 0 17px; }
+
+.envelope {
+  font-size: 85px;
+  margin: 25px 0 5px;
+  cursor: pointer;
+  transition: .4s;
+  display: inline-block;
 }
-#mensaje {
-    display: none;
-    margin-top: 25px;
+
+.envelope:hover { transform: scale(1.12) rotate(-5deg); }
+
+#letter {
+  display: none;
+  animation: appear .8s ease;
 }
-.heart { font-size: 45px; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline {
+  max-width: 550px;
+  margin: 40px auto;
+  text-align: left;
+  border-left: 2px solid #b66b85;
+  padding-left: 25px;
+}
+
+.event {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.event::before {
+  content: '♥';
+  position: absolute;
+  left: -34px;
+  color: var(--pink);
+}
+
+.event h3 {
+  color: var(--pink);
+  font-size: 23px;
+  margin: 0 0 8px;
+}
+
+.event p { color: #e6cbd5; line-height: 1.8; }
+
+.memory {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 18px;
+  background: #291722;
+  border: 1px solid #684054;
+}
+
+.memory .symbol { font-size: 35px; }
+
+.memory p {
+  color: #e6cbd5;
+  line-height: 1.8;
+}
+
+.secret {
+  display: none;
+  margin: 25px auto;
+  color: var(--pink);
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  max-width: 500px;
+  line-height: 1.6;
+  animation: appear .8s ease;
+}
+
+footer {
+  padding: 60px 20px;
+  text-align: center;
+  color: #d9a9ba;
+  background: #100910;
+}
+
+footer p {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+}
+
+@media(max-width: 500px) {
+  section { padding: 75px 18px; }
+  .card { padding: 24px; }
+}
 </style>
 </head>
+
 <body>
-<div class="card">
-    <div class="heart">❤️</div>
-    <h1>Para Rachelly</h1>
-    <p>Hay personas que llegan a tu vida y la hacen mucho más bonita...</p>
-    <p>Y tú eres una de ellas. ❤️</p>
-    <button onclick="mostrarMensaje()">Pulsa aquí ❤️</button>
-    <div id="mensaje">
-        <h2>Te quiero muchísimo ❤️</h2>
-        <p>Gracias por cada momento, cada sonrisa y por hacerme tan feliz.</p>
-        <p>Esta pequeña sorpresa es solo para ti. 💗</p>
-        <div class="heart">💘</div>
-    </div>
+
+<div class="hero" id="inicio">
+  <span class="eyebrow">Una pequeña sorpresa para ti</span>
+  <h1>Para mi<br><em>persona favorita</em></h1>
+  <p class="subtitle">
+    No sé si estas palabras serán suficientes para explicarte
+    lo mucho que significas para mí, pero quiero intentarlo.
+  </p>
+  <a href="#carta" class="btn">Tengo algo para ti ❤️</a>
+  <p style="margin-top:65px;color:#d4a5b5;font-size:12px">
+    Hecho con mucho amor ♡
+  </p>
 </div>
+
+<section id="carta">
+  <span class="eyebrow">Con cariño, para ti</span>
+  <h2 class="section-title">Una carta para <em>mi amor</em></h2>
+  <p class="subtitle">Hay algo que quiero que leas...</p>
+
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p style="color:#dcaabd;font-size:13px">Pulsa el sobre para abrir tu carta</p>
+
+  <div class="card" id="letter">
+    <p>Mi niña bonita:</p>
+    <p>
+      A veces me pongo a pensar en lo bonito que es tenerte
+      en mi vida. Nos conocemos desde siempre, pero ahora
+      tengo la suerte de poder llamarte mi amor.
+    </p>
+    <p>
+      Desde aquel 5 de marzo de 2026, nuestra historia tiene
+      un significado todavía más especial para mí.
+    </p>
+    <p>
+      Quiero que sepas que eres una persona muy importante
+      para mí. Me encanta poder compartir contigo esta
+      etapa de nuestras vidas y seguir creando recuerdos juntos.
+    </p>
+    <p>
+      No necesito que todos los días sean perfectos.
+      Solamente quiero que sigamos construyendo algo bonito,
+      cuidándonos y eligiéndonos.
+    </p>
+    <p>
+      Gracias por ser tú, mi princesa.
+      Te quiero muchísimo. ❤️
+    </p>
+    <p style="text-align:right;color:#efb6c9">
+      Con todo mi amor, para ti. ♡
+    </p>
+  </div>
+</section>
+
+<section id="historia" style="background:#21131c">
+  <span class="eyebrow">Nuestro pequeño universo</span>
+  <h2 class="section-title">Nuestra <em>historia</em></h2>
+  <p class="subtitle">
+    Algunas cosas que hacen especial nuestra historia.
+  </p>
+
+  <div class="timeline">
+    <div class="event">
+      <h3>Desde siempre</h3>
+      <p>
+        Nos conocemos desde que nacimos.
+        Quién iba a imaginar todo lo que la vida
+        todavía tenía preparado para nosotros.
+      </p>
+    </div>
+
+    <div class="event">
+      <h3>5 de marzo de 2026</h3>
+      <p>
+        El comienzo de nuestra relación.
+        Una fecha que siempre tendrá un lugar
+        especial en mi corazón.
+      </p>
+    </div>
+
+    <div class="event">
+      <h3>Lo que viene...</h3>
+      <p>
+        Todavía nos quedan muchísimas cosas
+        por vivir, lugares por conocer y recuerdos
+        por crear, mi vida.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="detalles">
+  <span class="eyebrow">Pequeños detalles</span>
+  <h2 class="section-title">Para mi <em>nena</em></h2>
+
+  <div class="memory">
+    <div class="symbol">🌷</div>
+    <h3>Una cosa que quiero que recuerdes</h3>
+    <p>
+      Nunca olvides lo especial que eres para mí.
+      No tienes que hacer nada extraordinario
+      para merecer todo el cariño que te tengo.
+    </p>
+  </div>
+
+  <div class="memory">
+    <div class="symbol">💗</div>
+    <h3>Un deseo</h3>
+    <p>
+      Ojalá podamos mirar atrás dentro de muchos años
+      y recordar con una sonrisa todo lo que vivimos juntos.
+    </p>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#281522,#170d14)">
+  <span class="eyebrow">Una última cosita...</span>
+  <h2 class="section-title">Tengo algo <em>que decirte</em></h2>
+  <p class="subtitle">
+    Hay un mensaje que he guardado especialmente para ti.
+  </p>
+
+  <button class="btn" onclick="showSecret()">
+    Descubrir sorpresa ❤️
+  </button>
+
+  <div class="secret" id="secret">
+    Si tuviera que volver a elegir,
+    volvería a elegirte a ti, mi amor.
+    <br><br>
+    Te quiero, mi princesa. ❤️
+  </div>
+</section>
+
+<footer>
+  <p>Para ti, mi vida. ♡</p>
+  <span>Con amor, hoy y siempre.</span>
+</footer>
+
 <script>
-function mostrarMensaje() {
-    document.getElementById("mensaje").style.display = "block";
+function openLetter() {
+  const letter = document.getElementById('letter');
+  letter.style.display = 'block';
+  letter.scrollIntoView({behavior:'smooth', block:'center'});
 }
+
+function showSecret() {
+  const secret = document.getElementById('secret');
+  secret.style.display = 'block';
+  secret.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = Math.random() > .5 ? '♥' : '♡';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (12 + Math.random() * 20) + 'px';
+  heart.style.animationDuration = (7 + Math.random() * 6) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 13000);
+}
+
+setInterval(createHeart, 1100);
 </script>
+
 </body>
 </html>
+
