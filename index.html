@@ -17,7 +17,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -37,6 +36,7 @@ section {
   padding: 90px 20px;
   text-align: center;
   position: relative;
+  scroll-margin-top: 65px;
 }
 
 .hero {
@@ -94,7 +94,7 @@ h1 em, h2 em { color: var(--pink); }
 nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   background: rgba(23,13,20,.94);
   backdrop-filter: blur(12px);
   padding: 14px 10px;
@@ -264,7 +264,7 @@ nav a:hover { color: white; }
 
 .reason.open .reason-text { display: block; }
 
-/* VALE PARA RASCAR */
+/* TARJETA PARA RASCAR */
 
 .scratch-area {
   width: min(420px, 90vw);
@@ -317,19 +317,203 @@ nav a:hover { color: white; }
   font-size: 13px;
 }
 
-footer {
-  padding: 60px 20px;
-  text-align: center;
-  color: #d9a9ba;
-  background: #100910;
+/* NUESTRO CIELO */
+
+#nuestro-cielo {
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, #192b55 0%, #0b1530 48%, #050914 100%);
+  color: white;
+  isolation: isolate;
 }
 
-footer p {
-  font-family: 'Playfair Display', serif;
-  font-size: 25px;
+.sky-container {
+  max-width: 650px;
+  margin: auto;
 }
 
-/* CORAZONES */
+.sky-label {
+  color: #b9caff;
+  letter-spacing: 5px;
+  font-size: 11px;
+}
+
+#nuestro-cielo h2 {
+  font-size: clamp(34px, 7vw, 52px);
+  margin: 18px 0 12px;
+  color: white;
+  text-shadow: 0 0 25px #9ebcff;
+}
+
+.sky-description {
+  color: #d1dcf8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.constellation {
+  max-width: 420px;
+  margin: 35px auto;
+  filter: drop-shadow(0 0 12px #9dbdff);
+}
+
+.sky-svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.constellation-lines path {
+  fill: none;
+  stroke: #a9c8ff;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 6;
+}
+
+.constellation-stars circle {
+  fill: white;
+  filter: drop-shadow(0 0 7px #b6d0ff);
+}
+
+.sky-svg text {
+  fill: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sky-button {
+  background: linear-gradient(135deg, #718bd2, #a58bdc);
+  color: white;
+  border: 1px solid #c4d2ff;
+  padding: 14px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 0 20px #829fe755;
+  transition: .3s;
+}
+
+.sky-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px #a9c4ff99;
+}
+
+.sky-secret {
+  color: white;
+  margin-top: 25px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .8s;
+}
+
+.sky-secret.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sky-footer {
+  margin-top: 45px;
+  color: #c2d0f3;
+}
+
+.sky-footer span {
+  font-size: 35px;
+  color: #c5d6ff;
+}
+
+/* CONTADOR */
+
+#contador-pareja {
+  background: linear-gradient(145deg, #fff0f4, #f9dce8);
+  color: #672b45;
+}
+
+.love-counter {
+  max-width: 700px;
+  margin: auto;
+}
+
+.counter-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #a45c79;
+}
+
+#contador-pareja h2 {
+  font-size: clamp(32px, 6vw, 48px);
+  margin: 18px 0;
+  color: #762d4d;
+}
+
+.counter-description {
+  color: #89566c;
+  line-height: 1.7;
+}
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 40px 0;
+}
+
+.counter-item {
+  background: rgba(255,255,255,.75);
+  border: 1px solid #edc2d3;
+  border-radius: 18px;
+  padding: 22px 5px;
+  box-shadow: 0 8px 20px #8c42621a;
+}
+
+.counter-item span {
+  display: block;
+  font-size: clamp(25px, 5vw, 40px);
+  font-weight: bold;
+  color: #a33d68;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-item small {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #986078;
+}
+
+.counter-heart {
+  font-size: 40px;
+  color: #d65b88;
+  animation: counter-pulse 1.5s infinite;
+}
+
+.counter-message {
+  max-width: 480px;
+  margin: 20px auto;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.counter-initials {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.counter-initials span {
+  color: #d65b88;
+}
+
+@keyframes counter-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* ANIMACIONES */
+
+@keyframes sky-twinkle {
+  from { opacity: .35; }
+  to { opacity: .9; }
+}
 
 .heart {
   position: fixed;
@@ -350,13 +534,19 @@ footer p {
 
 @media(max-width: 600px) {
   section { padding: 70px 16px; }
+
   .gallery, .family, .reasons-container {
     grid-template-columns: 1fr;
   }
+
   .photo img { height: 260px; }
   .family-card img { height: 260px; }
   .card { padding: 23px; }
   nav { gap: 12px; }
+
+  .counter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
 </head>
@@ -386,6 +576,8 @@ footer p {
   <a href="#familia">Nuestra familia</a>
   <a href="#razones">100 razones</a>
   <a href="#vale">Un regalo</a>
+  <a href="#nuestro-cielo">Nuestro cielo ✨</a>
+  <a href="#contador-pareja">Nuestro tiempo ❤️</a>
 </nav>
 
 <!-- CARTA -->
@@ -448,35 +640,29 @@ footer p {
   </p>
 
   <div class="gallery">
-
     <div class="photo">
-      <img src="fotos/fotos/1000005166.jpg"
-           alt="Nosotros en la playa">
+      <img src="fotos/fotos/1000005166.jpg" alt="Nosotros en la playa">
       <h3>Un día en la playa 🌊</h3>
       <p>Uno de nuestros recuerdos juntos.</p>
     </div>
 
     <div class="photo">
-      <img src="fotos/fotos/1000012876.jpg"
-           alt="Rachelly">
+      <img src="fotos/fotos/1000012876.jpg" alt="Rachelly">
       <h3>Mi niña bonita 🌷</h3>
       <p>Una de mis caritas favoritas.</p>
     </div>
 
     <div class="photo">
-      <img src="fotos/fotos/1000036019.jpg"
-           alt="Nosotros juntando nuestras frentes">
+      <img src="fotos/fotos/1000036019.jpg" alt="Nosotros juntando nuestras frentes">
       <h3>La pareja perfecta ❤️</h3>
       <p>De esos momentos que quiero guardar siempre.</p>
     </div>
 
     <div class="photo">
-      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.27%20AM.jpeg"
-           alt="Nosotros de pequeños">
+      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.27%20AM.jpeg" alt="Nosotros de pequeños">
       <h3>Desde pequeñitos 🥹</h3>
       <p>Quién nos iba a decir todo lo que vendría después.</p>
     </div>
-
   </div>
 </section>
 
@@ -492,10 +678,8 @@ footer p {
   </p>
 
   <div class="family">
-
     <div class="family-card">
-      <img src="fotos/fotos/1000000381.jpg"
-           alt="Nina con Rachelly">
+      <img src="fotos/fotos/1000000381.jpg" alt="Nina con Rachelly">
       <h3>Nina 🧸</h3>
       <p>
         La pequeña Nina, que llegó a nuestras vidas
@@ -504,15 +688,13 @@ footer p {
     </div>
 
     <div class="family-card">
-      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.26%20AM.jpeg"
-           alt="Kevin con Link">
+      <img src="fotos/fotos/WhatsApp%20Image%202026-11-04%20at%2012.39.26%20AM.jpeg" alt="Kevin con Link">
       <h3>Link 🧸</h3>
       <p>
         Mi compañero Link, el regalito que llegó
         a mí de parte de mi princesa.
       </p>
     </div>
-
   </div>
 
   <div class="card" style="text-align:center">
@@ -572,6 +754,98 @@ footer p {
   <button class="btn" onclick="revealPrize()">
     Descubrir mi regalo ❤️
   </button>
+</section>
+
+<!-- NUESTRO CIELO -->
+
+<section id="nuestro-cielo">
+  <div class="sky-container">
+    <span class="sky-label">UN UNIVERSO PARA DOS</span>
+
+    <h2>Nuestro cielo ✨</h2>
+
+    <p class="sky-description">
+      Entre millones de estrellas, siempre elegiría encontrarte a ti.
+    </p>
+
+    <div class="constellation">
+      <svg viewBox="0 0 340 220" class="sky-svg">
+        <g class="constellation-lines">
+          <path d="M75 110 L130 55 L190 110 L255 55 L290 125"/>
+          <path d="M75 110 L190 110 L290 125"/>
+        </g>
+
+        <g class="constellation-stars">
+          <circle cx="75" cy="110" r="5"/>
+          <circle cx="130" cy="55" r="5"/>
+          <circle cx="190" cy="110" r="5"/>
+          <circle cx="255" cy="55" r="5"/>
+          <circle cx="290" cy="125" r="5"/>
+        </g>
+
+        <text x="75" y="145" text-anchor="middle">K</text>
+        <text x="290" y="160" text-anchor="middle">R</text>
+        <text x="190" y="155" text-anchor="middle">♥</text>
+      </svg>
+    </div>
+
+    <button id="reveal-stars" class="sky-button">
+      ✨ Encender nuestras estrellas
+    </button>
+
+    <p id="sky-secret" class="sky-secret">
+      K + R. Dos iniciales, una historia y un mismo cielo. ❤️
+    </p>
+
+    <div class="sky-footer">
+      <span>∞</span>
+      <p>Mi estrella favorita siempre serás tú.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTADOR DE PAREJA -->
+
+<section id="contador-pareja">
+  <div class="love-counter">
+    <span class="counter-label">DESDE EL 5 DE MARZO DE 2026</span>
+
+    <h2>Nuestra historia ❤️</h2>
+
+    <p class="counter-description">
+      Y cada segundo que pasa es otro segundo a tu lado.
+    </p>
+
+    <div class="counter-grid">
+      <div class="counter-item">
+        <span id="love-days">0</span>
+        <small>DÍAS</small>
+      </div>
+
+      <div class="counter-item">
+        <span id="love-hours">0</span>
+        <small>HORAS</small>
+      </div>
+
+      <div class="counter-item">
+        <span id="love-minutes">0</span>
+        <small>MINUTOS</small>
+      </div>
+
+      <div class="counter-item">
+        <span id="love-seconds">0</span>
+        <small>SEGUNDOS</small>
+      </div>
+    </div>
+
+    <div class="counter-heart">♥</div>
+
+    <p class="counter-message">
+      No cuento los días que pasan, cuento la suerte que tengo de vivirlos contigo.
+    </p>
+
+    <div class="counter-initials">K <span>♥</span> R</div>
+  </div>
 </section>
 
 <!-- FINAL -->
@@ -789,6 +1063,47 @@ function revealPrize() {
 
 setupScratch();
 
+// NUESTRO CIELO
+
+const skyButton = document.getElementById('reveal-stars');
+const skySecret = document.getElementById('sky-secret');
+
+skyButton.addEventListener('click', function () {
+  skySecret.classList.toggle('visible');
+
+  skyButton.textContent = skySecret.classList.contains('visible')
+    ? '🌟 Nuestras estrellas están encendidas'
+    : '✨ Encender nuestras estrellas';
+});
+
+// CONTADOR DE PAREJA
+
+(function () {
+  const startDate = new Date(2026, 2, 5, 0, 0, 0);
+
+  function updateLoveCounter() {
+    const now = new Date();
+    let difference = Math.max(0, now - startDate);
+
+    const days = Math.floor(difference / 86400000);
+    difference %= 86400000;
+
+    const hours = Math.floor(difference / 3600000);
+    difference %= 3600000;
+
+    const minutes = Math.floor(difference / 60000);
+    const seconds = Math.floor((difference % 60000) / 1000);
+
+    document.getElementById('love-days').textContent = days;
+    document.getElementById('love-hours').textContent = hours;
+    document.getElementById('love-minutes').textContent = minutes;
+    document.getElementById('love-seconds').textContent = seconds;
+  }
+
+  updateLoveCounter();
+  setInterval(updateLoveCounter, 1000);
+})();
+
 // CORAZONES FLOTANTES
 
 function createHeart() {
@@ -810,3 +1125,4 @@ setInterval(createHeart, 1100);
 
 </body>
 </html>
+
